@@ -20,6 +20,10 @@ function main()
         main()
     else
         os.execute("clear")
-        print("þú ferð til ")
+        print("þú ferð til hans viktors og hann seigist hava fundið mann sem er að selja vegabréf")
+        print("þið farið til mannsins þið kaupið af honum vegabréf sem lítur út eins og þú")
+        print()
     end
 end
+
+main()
