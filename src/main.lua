@@ -2,12 +2,14 @@ function start() -- sögu byrjun
     os.execute("clear")
     print("þú ert ishmael. þú þarft að komast til íslands frá svíþjóð")
     print("----------------------------------")
-    print("a. þú færð hjálp frá viktori og jamal.")
-    print("b. þú reynir að komast á flugvél sjáfur")
+    print("a. þú reynir að komast á flugvél sjáfur")
+    print("b. þú færð hjálp frá viktori og jamal.")
     print("veldu")
     local choice = io.read():lower()
     if choice == "a" or "b" then
         return choice -- lesa input úr console
+    else
+        error("not a valid choice")
     end
 end
 
@@ -23,7 +25,31 @@ function passport() -- vegabréf. þegar ishmael fær vegabréfið sitt
     if choice == "a" or "b" then
         return choice
     else
+        error("not a valid choice")
     end
+end
+
+function airplane() -- komin á flugvélin áleiðinna til ísland
+    os.execute("clear")
+    print("þú komst á flugvélinia")
+    print("Þér er boðið ókeypis mat. Þyggur þú það?")
+    print("----------------------------------")
+    print("a. já")
+    print("b. nei")
+    local choice = io.read():lower()
+    if choice == "a" or "b" then
+        return choice
+    else
+        error("not a valid choice")
+    end
+end
+
+function iceland()
+    os.execute("clear")
+    print("")
+    print("----------------------------------")
+    print("a. ")
+    print("b. ")
 end
 
 function main()
@@ -37,9 +63,14 @@ function main()
     end
     if psprt == "a" then
         print("þú komst ekki í flugvélina. þú þarft að læra smá spænsku.")
-        start()
+        main()
     else
-
+        airp = airplane()
+        if airp == "a" then
+            print("þú þyggur matin")
+        elseif airp == "b" then
+            print("þú Þyggur ekki matin")
+        end
     end
 end
 
