@@ -44,33 +44,61 @@ function airplane() -- komin á flugvélin áleiðinna til ísland
     end
 end
 
-function iceland()
+function iceland() -- komin til íslands
     os.execute("clear")
-    print("")
+    print("Þú ert núna komin til íslands og ert að fara út úr flugvellinum")
+    print("enn þú ert stoppaður af flugvalla lögreglum")
     print("----------------------------------")
-    print("a. ")
-    print("b. ")
+    print("a. láta einsog þú ert spænskur")
+    print("b. eða seiga þeim strax að þú sért sýrlenskur")
+    local choice = io.read():lower()
+    if choice == "a" or "b" then
+        return choice
+    else
+        error("not a valid choice")
+    end
+end
+
+function interrogation(ch) -- viðatalið
+    if ch == "a" then
+        print("þeir taka þig í yfrheyrslu")
+    elseif ch == "b" then
+        print("")
+    end
+
+    local choice = io.read():lower()
+    if choice == "a" or "b" then
+        return choice
+    else
+        error("not a valid choice")
+    end
 end
 
 function main()
     local strt = start()
-    if strt == "a" then
+    if strt == "a" then -- logic fyrir birjunina
         os.execute("clear")
         print("þú náðir ekki inn í flugvélina. þú þarft vegabréf.")
         main()
     else
         psprt = passport()
     end
-    if psprt == "a" then
+    if psprt == "a" then -- logic fyrir "passport" kaflan
         print("þú komst ekki í flugvélina. þú þarft að læra smá spænsku.")
         main()
     else
-        airp = airplane()
+        airp = airplane() -- logic fyrir "airplane" kaflan
         if airp == "a" then
             print("þú þyggur matin")
         elseif airp == "b" then
             print("þú Þyggur ekki matin")
         end
+    end
+    icel = iceland()
+    if icel == "a" then
+        interrogation("a")
+    elseif icel == "b" then
+        interrogation("b")
     end
 end
 
