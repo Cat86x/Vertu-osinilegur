@@ -1,6 +1,6 @@
 function start() -- sögu byrjun
     os.execute("clear")
-    print("þú ert ishmael. þú þarft að komast til íslands frá svíþjóð")
+    print("þú ert ishmael 15 ára strákur frá sýrlandi. þú þarft að komast til íslands frá svíþjóð")
     print("----------------------------------")
     print("a. þú reynir að komast á flugvél sjáfur")
     print("b. þú færð hjálp frá viktori og jamal.")
@@ -17,10 +17,10 @@ function passport() -- vegabréf. þegar ishmael fær vegabréfið sitt
     os.execute("clear")
     print("þú ferð til hans viktors og hann seigist hava fundið mann sem er að selja vegabréf")
     print("þið farið til mannsins þið kaupið af honum vegabréf sem lítur út eins og þú")
-    print("Hann er sammt spænskur og líkameð yfirvara skegg en skiftir það sammt máli þú lítur avlvegi eins og hann fyrir utan yfirvara skeggið")
+    print("Hann er sammt spænskur og líkameð yfirvara skegg en skiftir það sammt máli þú lítur avlvegi eins og hann fyrir utan yfirvara skeggið og hann er 21 árs")
     print("----------------------------------")
     print("a. þú ferð beint á flugvöllin")
-    print("b. þú ferð og lærir smá spænsku")
+    print("b. þú ferð og lærir smá spænsku og ferð svo á flugvöllin")
     local choice = io.read():lower()
     if choice == "a" or "b" then
         return choice
@@ -31,7 +31,8 @@ end
 
 function airplane() -- komin á flugvélin áleiðinna til ísland
     os.execute("clear")
-    print("þú komst á flugvélinia")
+    print("þú ferð á flugvöllin")
+    print(" og þú komst á flugvélinia")
     print("Þér er boðið ókeypis mat. Þyggur þú það?")
     print("----------------------------------")
     print("a. já")
@@ -59,19 +60,32 @@ function iceland() -- komin til íslands
     end
 end
 
-function interrogation(ch) -- viðatalið
+function interrogation(ch) -- yfirheyrslan
     if ch == "a" then
-        print("þeir taka þig í yfrheyrslu")
+        print("Lögreglunar taka þig í yfrheyrslu")
+        print("þú reynir að halda áfram að láta eins og þú ert spænskur")
+        print("lögreglunar virðast fara út og ná í þíðanda")
+        print("þegar þíðandin kemur reyniru að seiga þeim að þú ert sýrlenskur ekki spænskur")
+        print("þú ert þá sentur uppá lögreglu stöðinna á keflavík þar sem þú bíður eftir arabískum þíðanda")
     elseif ch == "b" then
-        print("")
+        print("Lögreglunar taka þig í yfrheyrslu")
+        print("þegar þú ert komin inní yfirheyrslu herbergið reyniru að seiga þeim að þú ert sýrlenskur ekki spænskur")
+        print("þú ert þá sentur uppá lögreglu stöðinna á keflavík þar sem þú bíður eftir arabískum þíðanda")
     end
+    print("ýttu á enter til að halda áfram")
+    io.read()
+end
 
-    local choice = io.read():lower()
-    if choice == "a" or "b" then
-        return choice
-    else
-        error("not a valid choice")
-    end
+function ending() -- erdirinn
+    os.execute("clear")
+    print("þegar þíðandin kemur sérðu að það er lína.")
+    print("þú hefur fundið karam fjölskylduna.")
+    print("lína útskýrir að þú ert bara 15.")
+    print("þegar hún r búin að útskýra leyfa lögreglunar þér að fara með línu heim til sín.")
+    print("þar hittiru sali bestu vinkonu þína.")
+    print("núna er heimilið þitt hjá karam fjölskylduni.")
+    print("----------------------------------")
+    print("það er allt og summt")
 end
 
 function main()
@@ -100,6 +114,7 @@ function main()
     elseif icel == "b" then
         interrogation("b")
     end
+    ending()
 end
 
 main()
