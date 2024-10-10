@@ -81,7 +81,7 @@ function ending() -- erdirinn
     print("þegar þíðandin kemur sérðu að það er lína.")
     print("þú hefur fundið karam fjölskylduna.")
     print("lína útskýrir að þú ert bara 15.")
-    print("þegar hún r búin að útskýra leyfa lögreglunar þér að fara með línu heim til sín.")
+    print("þegar hún er búin að útskýra leyfa lögreglunar þér að fara með línu heim til sín.")
     print("þar hittiru sali bestu vinkonu þína.")
     print("núna er heimilið þitt hjá karam fjölskylduni.")
     print("----------------------------------")
